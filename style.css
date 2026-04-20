@@ -7,6 +7,9 @@
 
 /* BODY */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   color: #333;
@@ -21,6 +24,9 @@ header {
   color: #f4f4f4;
   align-items: center;
   flex-wrap: wrap;
+}
+.imh {
+  flex: 1;
 }
 
 /* NAV */
@@ -138,5 +144,4 @@ footer {
   padding: 15px;
   background-color: #222;
   color: white;
-  margin-top: 20px;
 }
