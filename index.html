@@ -11,37 +11,42 @@
   <body>
     <!-- HEADER -->
     <header>
-      <h1>Daniel Martinez</h1>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-        <a href="mascotas.html">Pets</a>
-      </nav>
-    </header>
+  <h1>Daniel Martinez</h1>
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <button id="menuToggle" class="menu-toggle">☰</button>
+
+  <nav id="navMenu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="mascotas.html">Pets</a>
+  </nav>
+</header>
 
     <main class="imh">
       <!-- ABOUT -->
       <section id="about">
         <h2>About Me</h2>
-        <p>
+        <p id="aboutText">
           Hello! My name is Daniel. I am a beginner programmer currently
           learning Python, HTML, and CSS. I enjoy building small projects and
           improving my skills every day. My goal is to become a professional
           developer.
         </p>
+        <button id="changeTextBtn">Change Text</button>
       </section>
 
       <!-- PROJECTS -->
       <section id="projects">
         <h2 class="proy">Projects</h2>
 
-        <div class="card1">
+        <div class="card">
           <h3>Inventory System</h3>
           <p>CLI application using Python to manage products.</p>
         </div>
 
-        <div class="card2">
+        <div class="card">
           <h3>Student System</h3>
           <p>CRUD system to manage student data.</p>
         </div>
@@ -70,5 +75,6 @@
     <footer>
       <p>© 2026 Daniel Martinez | All rights reserved</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
