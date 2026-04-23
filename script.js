@@ -1,15 +1,31 @@
-// seleccionar elementos
-const btn = document.getElementById("changeTextBtn");
-const text = document.getElementById("aboutText");
+// Esperar a que cargue el DOM
+document.addEventListener("DOMContentLoaded", () => {
 
-// evento click
-btn.addEventListener("click", () => {
-  text.textContent = "Now you are interacting with my portfolio 🚀";
+  // BOTÓN HAMBURGUESA
+  const menuBtn = document.getElementById("menuToggle");
+  const nav = document.getElementById("navMenu");
+
+  menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+  });
+
+  // SE CIERRE EL MENU
+const links = document.querySelectorAll("#navMenu a");
+
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
 });
 
-const menuBtn = document.getElementById("menuToggle");
-const nav = document.getElementById("navMenu");
+  // CAMBIO DE TEXTO (About)
+  const btn = document.getElementById("changeTextBtn");
+  const text = document.getElementById("aboutText");
 
-menuBtn.addEventListener("click", () => {
-  nav.classList.toggle("active");
+  if (btn) {
+    btn.addEventListener("click", () => {
+      text.textContent = "Now you are interacting with my portfolio 🚀";
+    });
+  }
+
 });
