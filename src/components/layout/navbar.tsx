@@ -5,11 +5,11 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { label: "Proyectos", href: "#work" },
-  { label: "Sobre mí", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
   { label: "Stack", href: "#stack" },
-  { label: "Trayectoria", href: "#journey" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Journey", href: "#journey" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const Navbar: React.FC = () => {
@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
     <header className="sticky top-0 z-50 w-full border-b border-surface-border bg-background/80 backdrop-blur-md">
       <Container size="lg">
         <div className="flex h-16 items-center justify-between">
-          {/* Identificador de marca / Perfil */}
+          {/* Brand Identifier */}
           <a
             href="#"
             className="font-mono text-sm font-semibold tracking-tight text-foreground hover:text-accent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1.5 py-1"
@@ -27,8 +27,8 @@ export const Navbar: React.FC = () => {
             AI &amp; Software Eng
           </a>
 
-          {/* Navegación Escritorio */}
-          <nav className="hidden md:flex items-center gap-6" aria-label="Navegación principal">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -40,14 +40,14 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* CTAs Escritorio */}
+          {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
             <a
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-2 py-1"
-              aria-label="GitHub (enlace temporal)"
+              aria-label="GitHub (placeholder link)"
             >
               GitHub ↗
             </a>
@@ -59,17 +59,17 @@ export const Navbar: React.FC = () => {
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Contacto
+              Contact
             </Button>
           </div>
 
-          {/* Botón Menú Móvil */}
+          {/* Mobile Menu Button */}
           <button
             type="button"
             className="md:hidden min-h-[44px] min-w-[44px] inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-surface hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
-            aria-label={isOpen ? "Cerrar menú" : "Abrir menú de navegación"}
+            aria-label={isOpen ? "Close menu" : "Open navigation menu"}
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg
@@ -90,13 +90,13 @@ export const Navbar: React.FC = () => {
         </div>
       </Container>
 
-      {/* Menú Desplegable Móvil */}
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div
           id="mobile-menu"
           className="md:hidden border-b border-surface-border bg-surface/95 backdrop-blur-md px-4 pt-2 pb-6 space-y-1"
         >
-          <nav aria-label="Navegación móvil" className="flex flex-col">
+          <nav aria-label="Mobile navigation" className="flex flex-col">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -123,7 +123,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(false)}
               className="min-h-[44px] flex items-center justify-center text-sm font-medium bg-accent text-accent-foreground rounded-md px-4 py-2"
             >
-              Contacto
+              Contact
             </a>
           </div>
         </div>

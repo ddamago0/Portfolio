@@ -1,34 +1,17 @@
+import { Hero } from "@/components/sections/hero";
 import { Container } from "@/components/ui/container";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
-    <main className="space-y-24 py-12">
-      {/* Placeholder Intro */}
-      <section className="py-12">
-        <Container size="lg">
-          <Card className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Badge variant="accent">Fase 3</Badge>
-              <Badge variant="outline">Global Layout &amp; Navigation</Badge>
-            </div>
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground">
-              Fundación de Navegación Global
-            </h1>
-            <p className="text-muted-foreground max-w-2xl text-sm sm:text-base">
-              Estructura global con Navbar sticky responsivo, desplazamiento suave por anclas,
-              soporte de accesibilidad y Footer institucional sobrio.
-            </p>
-          </Card>
-        </Container>
-      </section>
+    <main className="space-y-20 pb-24">
+      {/* Primary Hero Section */}
+      <Hero />
 
-      {/* Placeholders de secciones para probar la navegación de anclas */}
+      {/* Anchor Navigation Section Placeholders */}
       <section id="work" className="scroll-mt-20 py-8">
         <Container size="lg">
           <div className="border border-dashed border-surface-border rounded-xl p-8 text-center text-xs font-mono text-muted-foreground">
-            [Sección Placeholder: #work — Proyectos]
+            [Placeholder Section: #work — Work]
           </div>
         </Container>
       </section>
@@ -36,7 +19,7 @@ export default function Home() {
       <section id="about" className="scroll-mt-20 py-8">
         <Container size="lg">
           <div className="border border-dashed border-surface-border rounded-xl p-8 text-center text-xs font-mono text-muted-foreground">
-            [Sección Placeholder: #about — Sobre mí]
+            [Placeholder Section: #about — About]
           </div>
         </Container>
       </section>
@@ -44,7 +27,7 @@ export default function Home() {
       <section id="stack" className="scroll-mt-20 py-8">
         <Container size="lg">
           <div className="border border-dashed border-surface-border rounded-xl p-8 text-center text-xs font-mono text-muted-foreground">
-            [Sección Placeholder: #stack — Stack Técnico]
+            [Placeholder Section: #stack — Technical Stack]
           </div>
         </Container>
       </section>
@@ -52,7 +35,7 @@ export default function Home() {
       <section id="journey" className="scroll-mt-20 py-8">
         <Container size="lg">
           <div className="border border-dashed border-surface-border rounded-xl p-8 text-center text-xs font-mono text-muted-foreground">
-            [Sección Placeholder: #journey — Trayectoria]
+            [Placeholder Section: #journey — Journey]
           </div>
         </Container>
       </section>
@@ -60,7 +43,7 @@ export default function Home() {
       <section id="contact" className="scroll-mt-20 py-8">
         <Container size="lg">
           <div className="border border-dashed border-surface-border rounded-xl p-8 text-center text-xs font-mono text-muted-foreground">
-            [Sección Placeholder: #contact — Contacto]
+            [Placeholder Section: #contact — Contact]
           </div>
         </Container>
       </section>

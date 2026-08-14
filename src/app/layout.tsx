@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio — AI Engineer & Software Developer",
-  description: "Portfolio profesional de AI Engineer & Software Developer.",
+  description: "Personal portfolio of AI Engineer and Software Developer.",
 };
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
         <Navbar />
         <div className="flex-1">{children}</div>

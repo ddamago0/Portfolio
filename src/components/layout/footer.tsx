@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
               AI Engineer &amp; Software Developer
             </span>
             <span className="hidden sm:inline text-surface-border">•</span>
-            <span>© {currentYear} Todos los derechos reservados.</span>
+            <span>© {currentYear} All rights reserved.</span>
           </div>
 
           <div className="flex items-center gap-4 font-mono">
@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1 py-0.5"
-              aria-label="Perfil de GitHub (enlace temporal)"
+              aria-label="GitHub profile (placeholder link)"
             >
               GitHub
             </a>
@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1 py-0.5"
-              aria-label="Perfil de LinkedIn (enlace temporal)"
+              aria-label="LinkedIn profile (placeholder link)"
             >
               LinkedIn
             </a>
