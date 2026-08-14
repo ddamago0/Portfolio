@@ -3,8 +3,8 @@ import { Projects } from "@/components/sections/projects";
 import { About } from "@/components/sections/about";
 import { WhatIBuild } from "@/components/sections/what-i-build";
 import { TechStack } from "@/components/sections/tech-stack";
+import { Journey } from "@/components/sections/journey";
 import { Contact } from "@/components/sections/contact";
-import { Container } from "@/components/ui/container";
 
 export default function Home() {
   return (
@@ -24,14 +24,8 @@ export default function Home() {
       {/* Technical Stack Section */}
       <TechStack />
 
-      {/* Journey Section Placeholder (for #journey anchor navigation) */}
-      <section id="journey" className="scroll-mt-20 py-8">
-        <Container size="lg">
-          <div className="border border-dashed border-surface-border rounded-xl p-8 text-center text-xs font-mono text-muted-foreground">
-            [Placeholder Section: #journey — Journey]
-          </div>
-        </Container>
-      </section>
+      {/* Journey / Experience Section */}
+      <Journey />
 
       {/* Contact Section */}
       <Contact />
