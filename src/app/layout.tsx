@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio — AI Engineer & Software Developer",
-  description: "Personal portfolio of AI Engineer and Software Developer.",
+  description: "Portfolio profesional de AI Engineer & Software Developer.",
 };
 
 export default function RootLayout({
@@ -26,8 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-background text-foreground antialiased font-sans">
-        {children}
+      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
+        <Navbar />
+        <div className="flex-1">{children}</div>
+        <Footer />
       </body>
     </html>
   );
