@@ -16,17 +16,17 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Portfolio — AI Engineer & Software Developer",
-  description: "Portfolio profesional de AI Engineer & Software Developer.",
+  description: "Personal portfolio of AI Engineer and Software Developer.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="antialiased font-sans bg-[#0A0D12] text-[#F8FAFC]">
+      <body className="min-h-screen bg-background text-foreground antialiased font-sans">
         {children}
       </body>
     </html>
