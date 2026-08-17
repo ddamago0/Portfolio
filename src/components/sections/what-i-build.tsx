@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { MotionContainer } from "@/components/ui/motion-container";
 import { aboutContent } from "@/content/about";
 import { useLanguage } from "@/context/language-context";
 
@@ -16,7 +17,7 @@ export const WhatIBuild: React.FC = () => {
       <Container size="lg">
         <div className="space-y-12">
           {/* Header de la Sección */}
-          <div className="space-y-3 max-w-2xl">
+          <MotionContainer className="space-y-3 max-w-2xl">
             <Badge variant="accent">{content.pillarsBadge}</Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
               {content.pillarsTitle}
@@ -24,44 +25,43 @@ export const WhatIBuild: React.FC = () => {
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               {content.pillarsDescription}
             </p>
-          </div>
+          </MotionContainer>
 
           {/* Rejilla de 3 Columnas Responsiva */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {content.pillars.map((pillar) => (
-              <Card
-                key={pillar.id}
-                className="flex flex-col justify-between space-y-6 border-surface-border bg-surface/80 hover:border-muted-foreground/30 transition-all"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <Badge variant="accent">{pillar.badge}</Badge>
+            {content.pillars.map((pillar, index) => (
+              <MotionContainer key={pillar.id} delay={index * 0.15}>
+                <SpotlightCard className="flex flex-col justify-between space-y-6 h-full">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <Badge variant="accent">{pillar.badge}</Badge>
+                    </div>
+
+                    <div className="space-y-2">
+                      <h3 className="text-xl font-bold text-foreground tracking-tight">
+                        {pillar.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        {pillar.description}
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-foreground tracking-tight">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                      {pillar.description}
-                    </p>
+                  <div className="pt-4 border-t border-surface-border/50 space-y-2">
+                    <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider block font-semibold">
+                      {pillar.capabilitiesTitle}
+                    </span>
+                    <ul className="space-y-1.5 text-xs text-foreground/90 font-mono">
+                      {pillar.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-accent text-xs select-none">•</span>
+                          <span className="leading-snug">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-
-                <div className="pt-4 border-t border-surface-border/50 space-y-2">
-                  <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider block font-semibold">
-                    {pillar.capabilitiesTitle}
-                  </span>
-                  <ul className="space-y-1.5 text-xs text-foreground/90 font-mono">
-                    {pillar.highlights.map((highlight, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <span className="text-accent text-xs select-none">•</span>
-                        <span className="leading-snug">{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Card>
+                </SpotlightCard>
+              </MotionContainer>
             ))}
           </div>
         </div>

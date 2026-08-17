@@ -4,7 +4,8 @@ import * as React from "react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { MotionContainer } from "@/components/ui/motion-container";
 import { heroContent } from "@/content/hero";
 import { useLanguage } from "@/context/language-context";
 
@@ -17,7 +18,7 @@ export const Hero: React.FC = () => {
       <Container size="lg">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Columna Principal / Titular */}
-          <div className="lg:col-span-7 space-y-6">
+          <MotionContainer className="lg:col-span-7 space-y-6" delay={0.1}>
             <div className="inline-flex">
               <Badge variant="accent" size="md">
                 {content.badge}
@@ -57,17 +58,17 @@ export const Hero: React.FC = () => {
                 {content.secondaryCta.label} ↗
               </Button>
             </div>
-          </div>
+          </MotionContainer>
 
           {/* Columna Derecha / Panel de Estado de Sistema */}
-          <div className="lg:col-span-5">
-            <Card className="font-mono text-xs space-y-4 border-surface-border bg-surface/90">
+          <MotionContainer className="lg:col-span-5" delay={0.25}>
+            <SpotlightCard className="font-mono text-xs space-y-4 border-surface-border bg-surface/90">
               <div className="flex items-center justify-between border-b border-surface-border pb-3">
                 <span className="text-muted-foreground uppercase tracking-wider font-semibold text-[11px]">
                   {content.statusPanel.title}
                 </span>
                 <span className="inline-flex items-center gap-1.5 text-status-success text-[11px]">
-                  <span className="h-2 w-2 rounded-full bg-status-success" />
+                  <span className="h-2 w-2 rounded-full bg-status-success animate-pulse" />
                   ONLINE
                 </span>
               </div>
@@ -91,8 +92,8 @@ export const Hero: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </Card>
-          </div>
+            </SpotlightCard>
+          </MotionContainer>
         </div>
       </Container>
     </section>

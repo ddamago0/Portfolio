@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { MotionContainer } from "@/components/ui/motion-container";
 import { aboutContent } from "@/content/about";
 import { useLanguage } from "@/context/language-context";
 
@@ -16,16 +17,16 @@ export const About: React.FC = () => {
       <Container size="lg">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Columna Izquierda / Header */}
-          <div className="lg:col-span-5 space-y-4">
+          <MotionContainer className="lg:col-span-5 space-y-4" delay={0.1}>
             <Badge variant="accent">{content.sectionBadge}</Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-[1.2]">
               {content.sectionTitle}
             </h2>
-          </div>
+          </MotionContainer>
 
           {/* Columna Derecha / Narrativa */}
-          <div className="lg:col-span-7">
-            <Card className="space-y-4 border-surface-border bg-surface/80">
+          <MotionContainer className="lg:col-span-7" delay={0.25}>
+            <SpotlightCard className="space-y-4 border-surface-border bg-surface/80">
               {content.paragraphs.map((paragraph, idx) => (
                 <p
                   key={idx}
@@ -34,8 +35,8 @@ export const About: React.FC = () => {
                   {paragraph}
                 </p>
               ))}
-            </Card>
-          </div>
+            </SpotlightCard>
+          </MotionContainer>
         </div>
       </Container>
     </section>

@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { LanguageProvider } from "@/context/language-context";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { AmbientBackground } from "@/components/ui/ambient-background";
 import "./globals.css";
 
 const inter = Inter({
@@ -66,7 +67,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
+      <body className="relative min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
+        <AmbientBackground />
         <LanguageProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
