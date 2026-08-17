@@ -1,29 +1,35 @@
+"use client";
+
 import * as React from "react";
 import { Container } from "@/components/ui/container";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { projectsContent } from "@/content/projects";
+import { useLanguage } from "@/context/language-context";
 
 export const Projects: React.FC = () => {
+  const { language } = useLanguage();
+  const content = projectsContent[language];
+
   return (
     <section id="work" className="scroll-mt-20 py-16 sm:py-24 border-b border-surface-border/60">
       <Container size="lg">
         <div className="space-y-12">
           {/* Header de la Sección */}
           <div className="space-y-3 max-w-2xl">
-            <Badge variant="accent">Featured Work</Badge>
+            <Badge variant="accent">{content.sectionBadge}</Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-              Engineering Projects &amp; AI Systems
+              {content.sectionTitle}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              Demonstrable software engineering decisions, data processing pipelines, and AI systems built with a focus on architecture and technical accuracy.
+              {content.sectionDescription}
             </p>
           </div>
 
           {/* Rejilla de Proyectos */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {projectsContent.map((project) => (
+            {content.projects.map((project) => (
               <Card
                 key={project.id}
                 className="flex flex-col justify-between space-y-6 border-surface-border bg-surface/80 hover:border-muted-foreground/30 transition-all"
@@ -50,7 +56,7 @@ export const Projects: React.FC = () => {
                   {/* Highlights de Ingeniería */}
                   <div className="space-y-2 pt-2 border-t border-surface-border/50">
                     <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider block font-semibold">
-                      Engineering Highlights
+                      {content.highlightsTitle}
                     </span>
                     <ul className="space-y-1.5 text-xs text-foreground/90">
                       {project.highlights.map((highlight, idx) => (
@@ -84,7 +90,7 @@ export const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto text-xs"
                       >
-                        View Code ↗
+                        {content.viewCodeLabel} ↗
                       </Button>
                     )}
                     {project.demoUrl && (
@@ -96,7 +102,7 @@ export const Projects: React.FC = () => {
                         rel="noopener noreferrer"
                         className="w-full sm:w-auto text-xs"
                       >
-                        Live Demo ↗
+                        {content.liveDemoLabel} ↗
                       </Button>
                     )}
                   </div>

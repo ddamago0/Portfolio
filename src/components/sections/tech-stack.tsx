@@ -1,28 +1,34 @@
+"use client";
+
 import * as React from "react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { stackContent } from "@/content/stack";
+import { useLanguage } from "@/context/language-context";
 
 export const TechStack: React.FC = () => {
+  const { language } = useLanguage();
+  const content = stackContent[language];
+
   return (
     <section id="stack" className="scroll-mt-20 py-16 sm:py-24 border-b border-surface-border/60">
       <Container size="lg">
         <div className="space-y-12">
           {/* Header de la Sección */}
           <div className="space-y-3 max-w-2xl">
-            <Badge variant="accent">{stackContent.sectionBadge}</Badge>
+            <Badge variant="accent">{content.sectionBadge}</Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-              {stackContent.sectionTitle}
+              {content.sectionTitle}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              {stackContent.sectionDescription}
+              {content.sectionDescription}
             </p>
           </div>
 
           {/* Rejilla de Categorías */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {stackContent.categories.map((cat) => (
+            {content.categories.map((cat) => (
               <Card
                 key={cat.id}
                 className="space-y-4 border-surface-border bg-surface/80 hover:border-muted-foreground/30 transition-all"

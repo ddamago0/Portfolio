@@ -1,11 +1,17 @@
+"use client";
+
 import * as React from "react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { contactContent } from "@/content/contact";
+import { useLanguage } from "@/context/language-context";
 
 export const Contact: React.FC = () => {
+  const { language } = useLanguage();
+  const content = contactContent[language];
+
   return (
     <section id="contact" className="scroll-mt-20 py-16 sm:py-24 border-b border-surface-border/60">
       <Container size="lg">
@@ -13,14 +19,14 @@ export const Contact: React.FC = () => {
           <div className="space-y-4 max-w-xl mx-auto">
             <div className="flex justify-center">
               <Badge variant="success">
-                {contactContent.statusMessage}
+                {content.statusMessage}
               </Badge>
             </div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground">
-              {contactContent.sectionTitle}
+              {content.sectionTitle}
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-              {contactContent.sectionDescription}
+              {content.sectionDescription}
             </p>
           </div>
 
@@ -28,13 +34,13 @@ export const Contact: React.FC = () => {
             <Button
               variant="primary"
               size="lg"
-              href={`mailto:${contactContent.email}`}
+              href={`mailto:${content.email}`}
               className="w-full sm:w-auto"
             >
-              {contactContent.emailCtaLabel} ✉
+              {content.emailCtaLabel} ✉
             </Button>
 
-            {contactContent.socials.map((social) => (
+            {content.socials.map((social) => (
               <Button
                 key={social.platform}
                 variant="outline"

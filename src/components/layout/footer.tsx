@@ -1,8 +1,12 @@
+"use client";
+
 import * as React from "react";
 import { Container } from "@/components/ui/container";
+import { useLanguage } from "@/context/language-context";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { language } = useLanguage();
 
   return (
     <footer className="w-full border-t border-surface-border bg-background py-8 text-xs text-muted-foreground">
@@ -10,10 +14,17 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
             <span className="font-mono font-medium text-foreground">
-              AI Engineer &amp; Software Developer
+              {language === "en"
+                ? "AI Engineer & Software Developer"
+                : "AI Engineer y Desarrollador de Software"}
             </span>
             <span className="hidden sm:inline text-surface-border">•</span>
-            <span>© {currentYear} All rights reserved.</span>
+            <span>
+              © {currentYear}{" "}
+              {language === "en"
+                ? "All rights reserved."
+                : "Todos los derechos reservados."}
+            </span>
           </div>
 
           <div className="flex items-center gap-4 font-mono">
@@ -22,7 +33,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1 py-0.5"
-              aria-label="GitHub profile (placeholder link)"
+              aria-label="GitHub profile link"
             >
               GitHub
             </a>
@@ -31,7 +42,7 @@ export const Footer: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1 py-0.5"
-              aria-label="LinkedIn profile (placeholder link)"
+              aria-label="LinkedIn profile link"
             >
               LinkedIn
             </a>
