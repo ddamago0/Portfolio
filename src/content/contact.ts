@@ -1,21 +1,4 @@
-import type { Language } from "@/context/language-context";
-
-export interface SocialLink {
-  platform: string;
-  label: string;
-  url: string;
-}
-
-export interface ContactContent {
-  sectionBadge: string;
-  sectionTitle: string;
-  sectionDescription: string;
-  statusBadge: string;
-  statusMessage: string;
-  email: string;
-  emailCtaLabel: string;
-  socials: SocialLink[];
-}
+import type { Language, ContactContent } from "@/types";
 
 export const contactContent: Record<Language, ContactContent> = {
   en: {

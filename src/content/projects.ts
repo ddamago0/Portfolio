@@ -1,26 +1,4 @@
-import type { Language } from "@/context/language-context";
-
-export interface Project {
-  id: string;
-  title: string;
-  badge: string;
-  description: string;
-  highlights: string[];
-  techStack: string[];
-  status: string;
-  repoUrl?: string;
-  demoUrl?: string;
-}
-
-export interface ProjectsSectionContent {
-  sectionBadge: string;
-  sectionTitle: string;
-  sectionDescription: string;
-  highlightsTitle: string;
-  viewCodeLabel: string;
-  liveDemoLabel: string;
-  projects: Project[];
-}
+import type { Language, ProjectsSectionContent } from "@/types";
 
 export const projectsContent: Record<Language, ProjectsSectionContent> = {
   en: {

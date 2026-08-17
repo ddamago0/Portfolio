@@ -1,18 +1,4 @@
-import type { Language } from "@/context/language-context";
-
-export interface StackCategory {
-  id: string;
-  category: string;
-  badge: string;
-  skills: string[];
-}
-
-export interface StackContent {
-  sectionBadge: string;
-  sectionTitle: string;
-  sectionDescription: string;
-  categories: StackCategory[];
-}
+import type { Language, StackContent } from "@/types";
 
 export const stackContent: Record<Language, StackContent> = {
   en: {

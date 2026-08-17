@@ -1,29 +1,4 @@
-import type { Language } from "@/context/language-context";
-
-export interface HeroStatusItem {
-  label: string;
-  value: string;
-  isActive?: boolean;
-}
-
-export interface HeroContent {
-  badge: string;
-  title: string;
-  description: string;
-  primaryCta: {
-    label: string;
-    href: string;
-  };
-  secondaryCta: {
-    label: string;
-    href: string;
-    isExternal?: boolean;
-  };
-  statusPanel: {
-    title: string;
-    items: HeroStatusItem[];
-  };
-}
+import type { Language, HeroContent } from "@/types";
 
 export const heroContent: Record<Language, HeroContent> = {
   en: {

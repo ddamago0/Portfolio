@@ -1,23 +1,4 @@
-import type { Language } from "@/context/language-context";
-
-export interface PillarItem {
-  id: string;
-  badge: string;
-  title: string;
-  description: string;
-  capabilitiesTitle: string;
-  highlights: string[];
-}
-
-export interface AboutContent {
-  sectionBadge: string;
-  sectionTitle: string;
-  paragraphs: string[];
-  pillarsBadge: string;
-  pillarsTitle: string;
-  pillarsDescription: string;
-  pillars: PillarItem[];
-}
+import type { Language, AboutContent } from "@/types";
 
 export const aboutContent: Record<Language, AboutContent> = {
   en: {

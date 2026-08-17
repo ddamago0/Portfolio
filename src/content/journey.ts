@@ -1,23 +1,4 @@
-import type { Language } from "@/context/language-context";
-
-export interface JourneyItem {
-  id: string;
-  period: string;
-  roleOrMilestone: string;
-  context: string;
-  description: string;
-  accomplishmentsTitle: string;
-  keyLearningsOrHighlights: string[];
-  tags: string[];
-  isCurrent?: boolean;
-}
-
-export interface JourneyContent {
-  sectionBadge: string;
-  sectionTitle: string;
-  sectionDescription: string;
-  items: JourneyItem[];
-}
+import type { Language, JourneyContent } from "@/types";
 
 export const journeyContent: Record<Language, JourneyContent> = {
   en: {
