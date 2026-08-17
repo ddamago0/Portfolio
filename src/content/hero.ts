@@ -16,6 +16,10 @@ export const heroContent: Record<Language, HeroContent> = {
       href: "https://github.com/ddamago0",
       isExternal: true,
     },
+    cvCta: {
+      label: "Download CV",
+      href: "/Daniel_David_Martinez_Gonzalez_CV.pdf",
+    },
     statusPanel: {
       title: "System Status",
       items: [
@@ -40,6 +44,10 @@ export const heroContent: Record<Language, HeroContent> = {
       label: "GitHub",
       href: "https://github.com/ddamago0",
       isExternal: true,
+    },
+    cvCta: {
+      label: "Descargar CV",
+      href: "/Daniel_David_Martinez_Gonzalez_CV.pdf",
     },
     statusPanel: {
       title: "Estado del Sistema",

@@ -20,6 +20,10 @@ export interface HeroContent {
     href: string;
     isExternal?: boolean;
   };
+  cvCta: {
+    label: string;
+    href: string;
+  };
   statusPanel: {
     title: string;
     items: HeroStatusItem[];
@@ -119,5 +123,7 @@ export interface ContactContent {
   statusMessage: string;
   email: string;
   emailCtaLabel: string;
+  cvUrl: string;
+  cvCtaLabel: string;
   socials: SocialLink[];
 }

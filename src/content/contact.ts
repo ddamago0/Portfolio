@@ -10,6 +10,8 @@ export const contactContent: Record<Language, ContactContent> = {
     statusMessage: "Available for new projects & opportunities",
     email: "ddamago0@gmail.com",
     emailCtaLabel: "Send an Email",
+    cvUrl: "/Daniel_David_Martinez_Gonzalez_CV.pdf",
+    cvCtaLabel: "Download CV",
     socials: [
       {
         platform: "GitHub",
@@ -32,6 +34,8 @@ export const contactContent: Record<Language, ContactContent> = {
     statusMessage: "Disponible para nuevos proyectos y oportunidades",
     email: "ddamago0@gmail.com",
     emailCtaLabel: "Enviar un Correo",
+    cvUrl: "/Daniel_David_Martinez_Gonzalez_CV.pdf",
+    cvCtaLabel: "Descargar CV",
     socials: [
       {
         platform: "GitHub",

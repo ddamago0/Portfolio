@@ -40,6 +40,17 @@ export const Contact: React.FC = () => {
               {content.emailCtaLabel} ✉
             </Button>
 
+            <Button
+              variant="secondary"
+              size="lg"
+              href={content.cvUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto font-mono text-xs"
+            >
+              {content.cvCtaLabel} 📄
+            </Button>
+
             {content.socials.map((social) => (
               <Button
                 key={social.platform}

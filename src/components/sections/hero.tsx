@@ -38,6 +38,16 @@ export const Hero: React.FC = () => {
               </Button>
 
               <Button
+                variant="secondary"
+                size="lg"
+                href={content.cvCta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {content.cvCta.label} 📄
+              </Button>
+
+              <Button
                 variant="outline"
                 size="lg"
                 href={content.secondaryCta.href}
