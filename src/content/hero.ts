@@ -13,7 +13,7 @@ export const heroContent: Record<Language, HeroContent> = {
     },
     secondaryCta: {
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/ddamago0",
       isExternal: true,
     },
     statusPanel: {
@@ -38,7 +38,7 @@ export const heroContent: Record<Language, HeroContent> = {
     },
     secondaryCta: {
       label: "GitHub",
-      href: "https://github.com",
+      href: "https://github.com/ddamago0",
       isExternal: true,
     },
     statusPanel: {

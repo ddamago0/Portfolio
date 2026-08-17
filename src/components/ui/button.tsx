@@ -48,6 +48,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           target={target}
           rel={rel}
           className={combinedClassName}
+          {...(props as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {children}
         </a>

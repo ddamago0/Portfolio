@@ -84,7 +84,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             <a
-              href="https://github.com"
+              href="https://github.com/ddamago0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-2 py-1"
@@ -181,7 +181,7 @@ export const Navbar: React.FC = () => {
           </nav>
           <div className="pt-4 border-t border-surface-border flex flex-col gap-2">
             <a
-              href="https://github.com"
+              href="https://github.com/ddamago0"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}

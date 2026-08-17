@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
 
           <div className="flex items-center gap-4 font-mono">
             <a
-              href="https://github.com"
+              href="https://github.com/ddamago0"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1 py-0.5"
@@ -38,7 +38,7 @@ export const Footer: React.FC = () => {
               GitHub
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/daniel-martinez-gonzalez-a891b3405"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-md px-1 py-0.5"

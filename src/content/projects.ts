@@ -24,7 +24,7 @@ export const projectsContent: Record<Language, ProjectsSectionContent> = {
         ],
         techStack: ["Python", "FastAPI", "Pandas", "Excel Processing", "Token Optimization"],
         status: "Completed",
-        repoUrl: "https://github.com",
+        repoUrl: "https://github.com/ddamago0",
       },
       {
         id: "prompt-analyzer-ai",
@@ -40,7 +40,7 @@ export const projectsContent: Record<Language, ProjectsSectionContent> = {
         ],
         techStack: ["Python", "tiktoken", "langdetect", "deep-translator", "FastAPI"],
         status: "Completed",
-        repoUrl: "https://github.com",
+        repoUrl: "https://github.com/ddamago0",
       },
       {
         id: "quotelab",
@@ -63,7 +63,7 @@ export const projectsContent: Record<Language, ProjectsSectionContent> = {
           "Vector Store",
         ],
         status: "Active Development",
-        repoUrl: "https://github.com",
+        repoUrl: "https://github.com/ddamago0",
       },
     ],
   },
@@ -90,7 +90,7 @@ export const projectsContent: Record<Language, ProjectsSectionContent> = {
         ],
         techStack: ["Python", "FastAPI", "Pandas", "Excel Processing", "Token Optimization"],
         status: "Completado",
-        repoUrl: "https://github.com",
+        repoUrl: "https://github.com/ddamago0",
       },
       {
         id: "prompt-analyzer-ai",
@@ -106,7 +106,7 @@ export const projectsContent: Record<Language, ProjectsSectionContent> = {
         ],
         techStack: ["Python", "tiktoken", "langdetect", "deep-translator", "FastAPI"],
         status: "Completado",
-        repoUrl: "https://github.com",
+        repoUrl: "https://github.com/ddamago0",
       },
       {
         id: "quotelab",
@@ -129,7 +129,7 @@ export const projectsContent: Record<Language, ProjectsSectionContent> = {
           "Vector Store",
         ],
         status: "Desarrollo Activo",
-        repoUrl: "https://github.com",
+        repoUrl: "https://github.com/ddamago0",
       },
     ],
   },
