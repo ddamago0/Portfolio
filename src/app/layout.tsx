@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { LanguageProvider } from "@/context/language-context";
+import { SmoothScrollProvider } from "@/components/ui/smooth-scroll-provider";
+import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AmbientBackground } from "@/components/ui/ambient-background";
@@ -20,39 +22,38 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "AI Engineer & Software Developer | Portfolio",
-    template: "%s | AI Engineer & Software Developer",
+    default: "Daniel Martínez | Software Developer & Engineer",
+    template: "%s | Daniel Martínez — Software Developer",
   },
   description:
-    "Professional engineering portfolio of AI Engineer & Software Developer building intelligent software, AI tools, data-processing pipelines, and token optimization systems.",
+    "Engineering portfolio of Daniel Martínez — Software Developer building modern web applications, robust backend APIs, and data pipelines.",
   keywords: [
-    "AI Engineer",
     "Software Developer",
+    "Software Engineer",
+    "Full-Stack",
     "Python",
     "TypeScript",
     "FastAPI",
     "React",
     "Next.js",
     "Clean Architecture",
-    "Token Optimization",
-    "LLM Systems",
     "Data Pipelines",
   ],
-  authors: [{ name: "AI Engineer & Software Developer" }],
+  authors: [{ name: "Daniel Martínez" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     alternateLocale: ["es_ES"],
-    title: "AI Engineer & Software Developer | Portfolio",
+    title: "Daniel Martínez | Software Developer & Engineer",
     description:
-      "Software engineering portfolio highlighting AI tools, semantic search, data ingestion pipelines, and clean architecture.",
-    siteName: "AI Engineer Portfolio",
+      "Engineering portfolio highlighting modern web applications, clean architecture, and data pipelines.",
+    siteName: "Daniel Martínez Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Engineer & Software Developer | Portfolio",
+    title: "Daniel Martínez | Software Developer & Engineer",
     description:
-      "Software engineering portfolio highlighting AI tools, semantic search, data ingestion pipelines, and clean architecture.",
+      "Engineering portfolio highlighting modern web applications, clean architecture, and data pipelines.",
   },
   robots: {
     index: true,
@@ -69,11 +70,14 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="relative min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
         <AmbientBackground />
-        <LanguageProvider>
-          <Navbar />
-          <div className="flex-1">{children}</div>
-          <Footer />
-        </LanguageProvider>
+        <CustomCursor />
+        <SmoothScrollProvider>
+          <LanguageProvider>
+            <Navbar />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </LanguageProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

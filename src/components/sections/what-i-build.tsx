@@ -13,16 +13,18 @@ export const WhatIBuild: React.FC = () => {
   const content = aboutContent[language];
 
   return (
-    <section className="py-16 sm:py-24 border-b border-surface-border/60">
+    <section className="py-20 sm:py-28 border-b border-surface-border/60">
       <Container size="lg">
         <div className="space-y-12">
           {/* Header de la Sección */}
-          <MotionContainer className="space-y-3 max-w-2xl">
-            <Badge variant="accent">{content.pillarsBadge}</Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <MotionContainer className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs font-semibold text-accent tracking-widest uppercase">
+              03 / CAPABILITIES
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground uppercase">
               {content.pillarsTitle}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               {content.pillarsDescription}
             </p>
           </MotionContainer>
@@ -31,14 +33,14 @@ export const WhatIBuild: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {content.pillars.map((pillar, index) => (
               <MotionContainer key={pillar.id} delay={index * 0.15}>
-                <SpotlightCard className="flex flex-col justify-between space-y-6 h-full">
+                <SpotlightCard className="flex flex-col justify-between space-y-6 h-full p-7 border-surface-border bg-surface/60">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                      <Badge variant="accent">{pillar.badge}</Badge>
+                      <Badge variant="accent" size="sm">{pillar.badge}</Badge>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-xl font-bold text-foreground tracking-tight">
+                      <h3 className="text-xl font-bold text-foreground tracking-tight uppercase">
                         {pillar.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">

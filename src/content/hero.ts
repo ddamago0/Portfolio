@@ -2,13 +2,13 @@ import type { Language, HeroContent } from "@/types";
 
 export const heroContent: Record<Language, HeroContent> = {
   en: {
-    badge: "AI & SOFTWARE SYSTEMS",
+    badge: "SOFTWARE ENGINEERING & WEB ARCHITECTURE",
     title:
-      "AI Engineer & Software Developer building intelligent software, AI tools and data-processing systems.",
+      "Software Developer crafting robust web applications, data pipelines & intelligent tools.",
     description:
-      "Software development focused on building artificial intelligence tools, data-processing pipelines, and token consumption optimization.",
+      "Combining clean architecture, modern frontend craftsmanship, and efficient backend APIs to build fast, scalable software.",
     primaryCta: {
-      label: "View Projects",
+      label: "View Work",
       href: "#work",
     },
     secondaryCta: {
@@ -21,21 +21,21 @@ export const heroContent: Record<Language, HeroContent> = {
       href: "/Daniel_David_Martinez_Gonzalez_CV.pdf",
     },
     statusPanel: {
-      title: "System Status",
+      title: "Engineering Profile",
       items: [
-        { label: "Role", value: "AI Engineer / Software Developer" },
-        { label: "Focus", value: "AI Tools & Data Pipelines" },
-        { label: "Stack", value: "Python · TypeScript · LLMs" },
-        { label: "Status", value: "Available for projects", isActive: true },
+        { label: "Role", value: "Software Developer / Engineer" },
+        { label: "Focus", value: "Full-Stack Web & Data Systems" },
+        { label: "Stack", value: "TypeScript · Python · Next.js" },
+        { label: "Status", value: "Available for work", isActive: true },
       ],
     },
   },
   es: {
-    badge: "SISTEMAS DE IA Y SOFTWARE",
+    badge: "INGENIERÍA DE SOFTWARE Y ARQUITECTURA WEB",
     title:
-      "AI Engineer y Desarrollador de Software enfocado en software inteligente, herramientas de IA y sistemas de procesamiento de datos.",
+      "Desarrollador de Software creando aplicaciones web robustas, pipelines de datos y herramientas inteligentes.",
     description:
-      "Desarrollo de software centrado en la creación de herramientas de inteligencia artificial, pipelines de procesamiento de datos y optimización de consumo de tokens.",
+      "Combinando arquitectura limpia, diseño frontend moderno e integración de APIs eficientes para construir software rápido y escalable.",
     primaryCta: {
       label: "Ver Proyectos",
       href: "#work",
@@ -50,12 +50,12 @@ export const heroContent: Record<Language, HeroContent> = {
       href: "/Daniel_David_Martinez_Gonzalez_CV.pdf",
     },
     statusPanel: {
-      title: "Estado del Sistema",
+      title: "Perfil Técnico",
       items: [
-        { label: "Rol", value: "AI Engineer / Desarrollador de Software" },
-        { label: "Enfoque", value: "Herramientas de IA y Pipelines de Datos" },
-        { label: "Stack", value: "Python · TypeScript · LLMs" },
-        { label: "Estado", value: "Disponible para proyectos", isActive: true },
+        { label: "Rol", value: "Desarrollador de Software" },
+        { label: "Enfoque", value: "Web Full-Stack y Sistemas de Datos" },
+        { label: "Stack", value: "TypeScript · Python · Next.js" },
+        { label: "Estado", value: "Disponible para trabajar", isActive: true },
       ],
     },
   },

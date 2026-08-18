@@ -14,37 +14,41 @@ export const Projects: React.FC = () => {
   const content = projectsContent[language];
 
   return (
-    <section id="work" className="scroll-mt-20 py-16 sm:py-24 border-b border-surface-border/60">
+    <section id="work" className="scroll-mt-20 py-20 sm:py-28 border-b border-surface-border/60">
       <Container size="lg">
         <div className="space-y-12">
-          {/* Header de la Sección */}
-          <MotionContainer className="space-y-3 max-w-2xl">
-            <Badge variant="accent">{content.sectionBadge}</Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          {/* Editorial Index Header */}
+          <MotionContainer className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs font-semibold text-accent tracking-widest uppercase">
+              01 / SELECTED WORK
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground uppercase">
               {content.sectionTitle}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               {content.sectionDescription}
             </p>
           </MotionContainer>
 
-          {/* Rejilla de Proyectos */}
+          {/* Rejilla de Proyectos Estilo itomdev.com */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {content.projects.map((project, index) => (
               <MotionContainer key={project.id} delay={index * 0.15}>
-                <SpotlightCard className="flex flex-col justify-between space-y-6 h-full">
-                  <div className="space-y-4">
+                <SpotlightCard className="flex flex-col justify-between space-y-6 h-full p-7 border-surface-border bg-surface/60 hover:border-accent/40 transition-all group">
+                  <div className="space-y-5">
                     {/* Categoría y Estado */}
                     <div className="flex items-center justify-between flex-wrap gap-2">
-                      <Badge variant="accent">{project.badge}</Badge>
-                      <span className="font-mono text-[11px] text-muted-foreground">
+                      <Badge variant="accent" size="sm">
+                        {project.badge}
+                      </Badge>
+                      <span className="font-mono text-[11px] text-muted-foreground uppercase">
                         {project.status}
                       </span>
                     </div>
 
                     {/* Título y Descripción */}
                     <div className="space-y-2">
-                      <h3 className="text-xl font-bold text-foreground tracking-tight">
+                      <h3 className="text-2xl font-bold text-foreground tracking-tight group-hover:text-accent transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -53,11 +57,11 @@ export const Projects: React.FC = () => {
                     </div>
 
                     {/* Highlights de Ingeniería */}
-                    <div className="space-y-2 pt-2 border-t border-surface-border/50">
+                    <div className="space-y-2 pt-3 border-t border-surface-border/50">
                       <span className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider block font-semibold">
                         {content.highlightsTitle}
                       </span>
-                      <ul className="space-y-1.5 text-xs text-foreground/90">
+                      <ul className="space-y-1.5 text-xs text-foreground/90 font-sans">
                         {project.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start gap-2">
                             <span className="text-accent font-mono text-xs select-none">•</span>
@@ -72,7 +76,7 @@ export const Projects: React.FC = () => {
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-1.5">
                       {project.techStack.map((tech) => (
-                        <Badge key={tech} variant="outline" size="sm">
+                        <Badge key={tech} variant="outline" size="sm" className="font-mono">
                           {tech}
                         </Badge>
                       ))}
@@ -87,7 +91,7 @@ export const Projects: React.FC = () => {
                           href={project.repoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full sm:w-auto text-xs"
+                          className="w-full sm:w-auto text-xs font-mono"
                         >
                           {content.viewCodeLabel} ↗
                         </Button>
@@ -99,7 +103,7 @@ export const Projects: React.FC = () => {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full sm:w-auto text-xs"
+                          className="w-full sm:w-auto text-xs font-mono"
                         >
                           {content.liveDemoLabel} ↗
                         </Button>

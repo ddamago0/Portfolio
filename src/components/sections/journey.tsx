@@ -13,16 +13,18 @@ export const Journey: React.FC = () => {
   const content = journeyContent[language];
 
   return (
-    <section id="journey" className="scroll-mt-20 py-16 sm:py-24 border-b border-surface-border/60">
+    <section id="journey" className="scroll-mt-20 py-20 sm:py-28 border-b border-surface-border/60">
       <Container size="lg">
         <div className="space-y-12">
           {/* Header de la Sección */}
-          <MotionContainer className="space-y-3 max-w-2xl">
-            <Badge variant="accent">{content.sectionBadge}</Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <MotionContainer className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs font-semibold text-accent tracking-widest uppercase">
+              05 / TIMELINE
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground uppercase">
               {content.sectionTitle}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               {content.sectionDescription}
             </p>
           </MotionContainer>
@@ -45,13 +47,13 @@ export const Journey: React.FC = () => {
                 </div>
 
                 {/* Tarjeta de Hito */}
-                <SpotlightCard className="space-y-4">
+                <SpotlightCard className="space-y-5 p-7 border-surface-border bg-surface/60">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-surface-border/50 pb-3">
                     <div className="space-y-0.5">
                       <span className="text-xs font-mono text-muted-foreground">
                         {item.context}
                       </span>
-                      <h3 className="text-lg font-bold text-foreground tracking-tight">
+                      <h3 className="text-xl font-bold text-foreground tracking-tight uppercase">
                         {item.roleOrMilestone}
                       </h3>
                     </div>
@@ -82,7 +84,7 @@ export const Journey: React.FC = () => {
                   {/* Tags Técnicas */}
                   <div className="flex flex-wrap gap-1.5 pt-3 border-t border-surface-border/50">
                     {item.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" size="sm">
+                      <Badge key={tag} variant="outline" size="sm" className="font-mono">
                         {tag}
                       </Badge>
                     ))}

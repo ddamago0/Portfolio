@@ -1,11 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
-import { MotionContainer } from "@/components/ui/motion-container";
+import { InfiniteMarquee } from "@/components/ui/infinite-marquee";
 import { heroContent } from "@/content/hero";
 import { useLanguage } from "@/context/language-context";
 
@@ -14,28 +13,73 @@ export const Hero: React.FC = () => {
   const content = heroContent[language];
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-28 border-b border-surface-border/60">
-      <Container size="lg">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          {/* Columna Principal / Titular */}
-          <MotionContainer className="lg:col-span-7 space-y-6" delay={0.1}>
-            <div className="inline-flex">
-              <Badge variant="accent" size="md">
-                {content.badge}
-              </Badge>
+    <div className="relative">
+      <section className="relative pt-20 sm:pt-28 pb-16 sm:pb-24 border-b border-surface-border/60 overflow-hidden">
+        <Container size="lg">
+          <div className="space-y-12 max-w-5xl">
+            {/* Top Row: Location & Availability Indicator */}
+            <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-muted-foreground uppercase tracking-widest border-b border-surface-border/40 pb-4">
+              <div className="flex items-center gap-2">
+                <span className="text-foreground font-semibold">DANIEL MARTÍNEZ</span>
+                <span className="text-surface-border">•</span>
+                <span>BASED IN COLOMBIA</span>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-status-success opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-status-success" />
+                </span>
+                <span className="text-status-success font-medium">
+                  {language === "en" ? "AVAILABLE FOR WORK" : "DISPONIBLE PARA TRABAJAR"}
+                </span>
+              </div>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.15]">
-              {content.title}
-            </h1>
+            {/* Monumental Mask-Revealed Display Title */}
+            <div className="space-y-2">
+              <div className="overflow-hidden py-1">
+                <motion.h1
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground leading-[0.98] uppercase"
+                >
+                  SOFTWARE DEVELOPER
+                </motion.h1>
+              </div>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+              <div className="overflow-hidden py-1">
+                <motion.h2
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-muted-foreground leading-[1.0] uppercase"
+                >
+                  & FULL-STACK ENGINEER
+                </motion.h2>
+              </div>
+            </div>
+
+            {/* Short Impactful Sub-headline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-lg sm:text-xl md:text-2xl text-foreground/90 max-w-3xl leading-relaxed font-sans"
+            >
               {content.description}
-            </p>
+            </motion.p>
 
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Button variant="primary" size="lg" href={content.primaryCta.href}>
-                {content.primaryCta.label}
+            {/* Action Buttons & Links */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="pt-4 flex flex-wrap items-center gap-6"
+            >
+              <Button variant="primary" size="lg" href={content.primaryCta.href} className="font-mono text-xs">
+                {language === "en" ? "EXPLORE WORK ↓" : "VER PROYECTOS ↓"}
               </Button>
 
               <Button
@@ -44,58 +88,36 @@ export const Hero: React.FC = () => {
                 href={content.cvCta.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="font-mono text-xs"
               >
-                {content.cvCta.label} 📄
+                {content.cvCta.label} ↗
               </Button>
 
-              <Button
-                variant="outline"
-                size="lg"
-                href={content.secondaryCta.href}
-                target={content.secondaryCta.isExternal ? "_blank" : undefined}
-                rel={content.secondaryCta.isExternal ? "noopener noreferrer" : undefined}
-              >
-                {content.secondaryCta.label} ↗
-              </Button>
-            </div>
-          </MotionContainer>
-
-          {/* Columna Derecha / Panel de Estado de Sistema */}
-          <MotionContainer className="lg:col-span-5" delay={0.25}>
-            <SpotlightCard className="font-mono text-xs space-y-4 border-surface-border bg-surface/90">
-              <div className="flex items-center justify-between border-b border-surface-border pb-3">
-                <span className="text-muted-foreground uppercase tracking-wider font-semibold text-[11px]">
-                  {content.statusPanel.title}
-                </span>
-                <span className="inline-flex items-center gap-1.5 text-status-success text-[11px]">
-                  <span className="h-2 w-2 rounded-full bg-status-success animate-pulse" />
-                  ONLINE
-                </span>
+              <div className="flex items-center gap-4 font-mono text-xs text-muted-foreground pt-2 sm:pt-0">
+                <a
+                  href="https://github.com/ddamago0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors underline-offset-4 hover:underline"
+                >
+                  GITHUB ↗
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/daniel-martinez-gonzalez-a891b3405"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors underline-offset-4 hover:underline"
+                >
+                  LINKEDIN ↗
+                </a>
               </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
 
-              <div className="space-y-3">
-                {content.statusPanel.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 py-1 border-b border-surface-border/40 last:border-0"
-                  >
-                    <span className="text-muted-foreground text-[11px]">
-                      {item.label}:
-                    </span>
-                    <span
-                      className={`font-medium ${
-                        item.isActive ? "text-status-success" : "text-foreground"
-                      }`}
-                    >
-                      {item.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </SpotlightCard>
-          </MotionContainer>
-        </div>
-      </Container>
-    </section>
+      {/* Infinite Horizontal Marquee Directly Below Hero */}
+      <InfiniteMarquee />
+    </div>
   );
 };

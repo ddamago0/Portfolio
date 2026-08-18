@@ -13,16 +13,18 @@ export const TechStack: React.FC = () => {
   const content = stackContent[language];
 
   return (
-    <section id="stack" className="scroll-mt-20 py-16 sm:py-24 border-b border-surface-border/60">
+    <section id="stack" className="scroll-mt-20 py-20 sm:py-28 border-b border-surface-border/60">
       <Container size="lg">
         <div className="space-y-12">
           {/* Header de la Sección */}
-          <MotionContainer className="space-y-3 max-w-2xl">
-            <Badge variant="accent">{content.sectionBadge}</Badge>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          <MotionContainer className="space-y-3 max-w-3xl">
+            <span className="font-mono text-xs font-semibold text-accent tracking-widest uppercase">
+              04 / TECH STACK
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-foreground uppercase">
               {content.sectionTitle}
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               {content.sectionDescription}
             </p>
           </MotionContainer>
@@ -31,9 +33,9 @@ export const TechStack: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {content.categories.map((cat, index) => (
               <MotionContainer key={cat.id} delay={index * 0.12}>
-                <SpotlightCard className="space-y-4 h-full">
+                <SpotlightCard className="space-y-5 h-full p-7 border-surface-border bg-surface/60">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-bold text-foreground tracking-tight">
+                    <h3 className="text-xl font-bold text-foreground tracking-tight uppercase">
                       {cat.category}
                     </h3>
                     <Badge variant="accent" size="sm">
@@ -41,7 +43,7 @@ export const TechStack: React.FC = () => {
                     </Badge>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 pt-2 border-t border-surface-border/50">
+                  <div className="flex flex-wrap gap-2 pt-3 border-t border-surface-border/50">
                     {cat.skills.map((skill) => (
                       <Badge key={skill} variant="outline" size="md" className="font-mono">
                         {skill}
