@@ -29,6 +29,13 @@ const config: Config = {
           success: "var(--status-success)",
           successBg: "var(--status-success-bg)",
         },
+        cyber: {
+          yellow: "#FCEE0A",
+          cyan: "#00F0FF",
+          red: "#FF003C",
+          black: "#06070B",
+          gray: "#12151E",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

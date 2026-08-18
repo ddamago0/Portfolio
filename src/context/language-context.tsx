@@ -11,9 +11,13 @@ interface LanguageContextType {
   toggleLanguage: () => void;
 }
 
-const LanguageContext = React.createContext<LanguageContextType | undefined>(
-  undefined
-);
+const defaultContext: LanguageContextType = {
+  language: "en",
+  setLanguage: () => {},
+  toggleLanguage: () => {},
+};
+
+const LanguageContext = React.createContext<LanguageContextType>(defaultContext);
 
 const STORAGE_KEY = "portfolio_lang";
 
@@ -63,8 +67,5 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
 
 export const useLanguage = (): LanguageContextType => {
   const context = React.useContext(LanguageContext);
-  if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
-  return context;
+  return context || defaultContext;
 };

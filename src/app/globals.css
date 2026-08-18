@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --background: #0b0f17;
+  --background: #06070b;
   --foreground: #f8fafc;
 
-  --surface: #111827;
-  --surface-hover: #1f2937;
-  --surface-border: rgba(255, 255, 255, 0.08);
+  --surface: #0c0e14;
+  --surface-hover: #12151e;
+  --surface-border: rgba(0, 240, 255, 0.25);
 
-  --muted: #1e293b;
+  --muted: #12151e;
   --muted-foreground: #94a3b8;
 
-  --accent: #0ea5e9;
-  --accent-foreground: #ffffff;
-  --accent-subtle: rgba(14, 165, 233, 0.12);
+  --accent: #fcee0a;
+  --accent-foreground: #06070b;
+  --accent-subtle: rgba(252, 238, 10, 0.14);
 
-  --status-success: #10b981;
-  --status-success-bg: rgba(16, 185, 129, 0.12);
+  --status-success: #00f0ff;
+  --status-success-bg: rgba(0, 240, 255, 0.12);
 }
 
 html {
@@ -51,7 +51,50 @@ html {
   }
 
   ::selection {
-    background-color: var(--accent-subtle);
-    color: var(--accent);
+    background-color: #fcee0a;
+    color: #06070b;
   }
+}
+
+/* Cyberpunk Utility Classes */
+.clip-chamfer {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+.clip-chamfer-lg {
+  clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.clip-chamfer-btn {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+.neon-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.4);
+}
+
+.neon-glow-yellow {
+  text-shadow: 0 0 10px rgba(252, 238, 10, 0.7), 0 0 20px rgba(252, 238, 10, 0.4);
+}
+
+.box-neon-cyan {
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.25), inset 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+.box-neon-yellow {
+  box-shadow: 0 0 15px rgba(252, 238, 10, 0.25), inset 0 0 10px rgba(252, 238, 10, 0.1);
+}
+
+/* Scanline Animation */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
 }

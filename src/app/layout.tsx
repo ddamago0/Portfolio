@@ -5,7 +5,8 @@ import { SmoothScrollProvider } from "@/components/ui/smooth-scroll-provider";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { AmbientBackground } from "@/components/ui/ambient-background";
+import { PerimeterRails } from "@/components/layout/perimeter-rails";
+import { CyberHudBackground } from "@/components/ui/cyber-hud-background";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,11 +23,11 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Daniel Martínez | Software Developer & Engineer",
+    default: "Daniel Martínez | Software Developer & Netrunner",
     template: "%s | Daniel Martínez — Software Developer",
   },
   description:
-    "Engineering portfolio of Daniel Martínez — Software Developer building modern web applications, robust backend APIs, and data pipelines.",
+    "Cyberpunk engineering portfolio of Daniel Martínez — Software Developer building modern web applications, robust backend APIs, and high-performance data systems.",
   keywords: [
     "Software Developer",
     "Software Engineer",
@@ -38,22 +39,23 @@ export const metadata: Metadata = {
     "Next.js",
     "Clean Architecture",
     "Data Pipelines",
+    "Netrunner",
   ],
   authors: [{ name: "Daniel Martínez" }],
   openGraph: {
     type: "website",
     locale: "en_US",
     alternateLocale: ["es_ES"],
-    title: "Daniel Martínez | Software Developer & Engineer",
+    title: "Daniel Martínez | Software Developer & Netrunner",
     description:
-      "Engineering portfolio highlighting modern web applications, clean architecture, and data pipelines.",
+      "Cyberpunk engineering portfolio highlighting modern web applications, clean architecture, and high-performance data systems.",
     siteName: "Daniel Martínez Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daniel Martínez | Software Developer & Engineer",
+    title: "Daniel Martínez | Software Developer & Netrunner",
     description:
-      "Engineering portfolio highlighting modern web applications, clean architecture, and data pipelines.",
+      "Cyberpunk engineering portfolio highlighting modern web applications, clean architecture, and high-performance data systems.",
   },
   robots: {
     index: true,
@@ -68,11 +70,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className="relative min-h-screen flex flex-col bg-background text-foreground antialiased font-sans">
-        <AmbientBackground />
+      <body className="relative min-h-screen flex flex-col bg-background text-foreground antialiased font-sans selection:bg-cyber-yellow selection:text-cyber-black">
+        <CyberHudBackground />
         <CustomCursor />
         <SmoothScrollProvider>
           <LanguageProvider>
+            <PerimeterRails />
             <Navbar />
             <div className="flex-1">{children}</div>
             <Footer />
